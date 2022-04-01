@@ -7,19 +7,18 @@ public class Paddle extends Rectangle{
     
     int id;
     int yVelocity;
-    int speed = 100;
+    int speed = 10;
     
     Paddle(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id){
         super(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
         this.id = id;
 
     }
-    public void KeyPressed(KeyEvent e){
+    public void keyPressed(KeyEvent e){
     	switch(id) {
     	case 1:
-    		if(e.getKeyCode()==KeyEvent.VK_W){
+    		if(e.getKeyCode() == KeyEvent.VK_W){
     			setYDirection( - speed);
-    			System.out.println("Nice");
     			move();
     		}
     		if(e.getKeyCode()==KeyEvent.VK_S){
@@ -36,10 +35,10 @@ public class Paddle extends Rectangle{
     			setYDirection(+speed);
     			move();
     		}
-    		break;
+    	break;
     	}
     }
-    public void KeyReleased(KeyEvent e){
+    public void keyReleased(KeyEvent e){
     	switch(id) {
     	case 1:
     		if(e.getKeyCode() == KeyEvent.VK_W){
@@ -60,7 +59,7 @@ public class Paddle extends Rectangle{
     			setYDirection(0);
     			move();
     		}
-    		break;
+    	break;
     	}
 
     }
